@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import joblib
 from google.cloud import firestore
+from google.oauth2 import service_account
 import time
 
 # Authenticate to Firestore with the JSON account key.
