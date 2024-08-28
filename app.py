@@ -9,10 +9,10 @@ import time
 import json
 key_dict = json.loads(st.secrets["textkey"])
 creds = service_account.Credentials.from_service_account_info(key_dict)
-db = firestore.Client(credentials=creds, project="apneaassist-acf2c")
+db = firestore.Client(credentials=creds, project="test-855c2")
 
 # Create a reference to the Google post.
-doc_ref = db.collection("userData").document("4T8rJNJL3JwgjsGr5uaU")
+doc_ref = db.collection("post").document("test")
 
 # Then get the data at that reference.
 doc = doc_ref.get()
