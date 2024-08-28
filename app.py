@@ -7,6 +7,8 @@ import time
 
 # Authenticate to Firestore with the JSON account key.
 import json
+
+st.set_page_config(layout="wide")
 key_dict = json.loads(st.secrets["textkey"])
 creds = service_account.Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="test-855c2")
@@ -20,8 +22,6 @@ doc = doc_ref.get()
 # Let's see what we got!
 st.write("The id is: ", doc.id)
 st.write("The contents are: ", doc.to_dict())
-
-st.set_page_config(layout="wide")
 
 tab1, tab2, tab3, tab4, tab5, tab6= st.tabs(["Home", "Screening Quiz", "More Information", "Donate", "About me + Contact Us", "Q&A"])
 data = np.random.randn(10, 1)
